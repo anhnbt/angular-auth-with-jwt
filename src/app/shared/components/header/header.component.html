@@ -1,0 +1,5 @@
+<ng-container *ngIf="authService.isAuthenticated$ | async as user">
+  Xin chao {{ user.username }}
+  <button type="button" (click)="logout()">Logout</button>
+</ng-container>
+<a routerLink="/auth/login" *ngIf="!authService.isLoggedIn()">Login</a>
